@@ -17,7 +17,7 @@ export class ItemComponent implements OnInit {
   saveItem(task:any) {
     if (!task) return;
     this.editable = false;
-    this.item.task
+    this.item.task = task
   }
 
   constructor() { }
