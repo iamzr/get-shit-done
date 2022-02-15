@@ -1,0 +1,17 @@
+<div class = "main">
+  <h1>GSD</h1>
+  <h2>How many things are you going to get done today?</h2>
+
+  <ul>
+    <li *ngFor="let item of items">{{item.task}}</li>
+  </ul>
+
+  <label for="addItemInput">Got a new task?</label>
+  <input #newItem
+  placeholder="New task"
+  (keyup.enter) = "addItem(newItem.value); newItem.value = ''"
+  class="lg-text-input"
+  id="addItemInput">
+  <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
+
+</div>
