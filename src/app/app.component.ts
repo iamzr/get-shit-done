@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Item } from './item';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +13,12 @@ export class AppComponent {
   filter: "all" | "active" | "done" = "all";
 
   allItems = [
-    {task: "learn c#", done: true},
-    {task: "learn java", done: false},
-    {task: "learn python", done: true},
-    {task: "learn scala", done: false},
-    {task: "learn c++", done: false},
-    {task: "learn c", done: false}
+    {task: "learn c#", done: true, date: new Date("2020-01-01")},
+    {task: "learn java", done: false, date: new Date("2020-01-01")},
+    {task: "learn python", done: true, date: new Date("2020-01-01")},
+    {task: "learn scala", done: false, date: new Date("2020-01-01")},
+    {task: "learn c++", done: false, date: new Date("2020-01-01")},
+    {task: "learn c", done: false, date: new Date("2020-01-01")}
   ]
 
   get items() {
@@ -30,7 +31,12 @@ export class AppComponent {
   addItem(task: string) {
     this.allItems.push({
       task,
+      date: new Date(),
       done: false
     })
+  }
+
+  remove(item: any) {
+    this.allItems.splice(this.allItems.indexOf(item), 1)
   }
 }
