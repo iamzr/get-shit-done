@@ -14,11 +14,13 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatDatepickerModule} from "@angular/material/datepicker"
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import { ItemComponent } from './item/item.component'
 
 @NgModule({
   declarations: [
     AppComponent,
+    ItemComponent,
   ],
   imports: [
     BrowserModule,
